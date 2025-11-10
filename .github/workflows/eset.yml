@@ -79,7 +79,10 @@ jobs:
 
       - name: Checkout Repository
         uses: actions/checkout@v5
-
+        
+      - name: Clone Repository
+        run: git clone -b "${{ steps.vars.outputs.branch }}" https://github.com/denis-minishin/ESET-KeyGen.git
+        
       - name: Setup & Run Script (Linux/macOS)
         if: runner.os != 'Windows'
         shell: bash
